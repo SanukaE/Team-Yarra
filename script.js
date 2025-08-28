@@ -173,11 +173,12 @@ function typeWriter(element, text, speed = 100) {
 window.addEventListener("scroll", () => {
   const scrolled = window.pageYOffset;
   const hero = document.querySelector(".hero");
+  const heroBg = document.querySelector(".hero-bg");
   const heroHeight = hero.offsetHeight;
 
-  if (scrolled < heroHeight) {
-    const speed = scrolled * 0.5;
-    hero.style.transform = `translateY(${speed}px)`;
+  if (scrolled < heroHeight && heroBg) {
+    const speed = scrolled * 0.3;
+    heroBg.style.transform = `translateY(${speed}px)`;
   }
 });
 
@@ -214,11 +215,4 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.style.transition = "opacity 1s ease";
     document.body.style.opacity = "1";
   }, 100);
-});
-
-document.addEventListener("keypress", (key) => {
-  console.log(key);
-  if (key.key === "Shift") {
-    document.getElementById("footerText").textContent = "Someone hire me :)";
-  }
 });
