@@ -1390,6 +1390,63 @@ nav {
   box-shadow: 0 8px 25px rgba(79, 195, 247, 0.2);
 }
 
+/* Profile buttons */
+.profile-btn {
+  background: linear-gradient(45deg, #4fc3f7, #29b6f6);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: inline-block;
+  margin-top: 1.5rem;
+  box-shadow: 0 5px 15px rgba(79, 195, 247, 0.3);
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.profile-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #81c784, #66bb6a);
+  transition: left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: -1;
+}
+
+.profile-btn:hover::before {
+  left: 0;
+}
+
+.profile-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(79, 195, 247, 0.4);
+  color: white;
+}
+
+.member-card-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.member-content {
+  flex: 1;
+}
+
+.profile-btn-container {
+  text-align: center;
+  padding: 0 2rem 2rem;
+  margin-top: auto;
+}
+
 /* Special effects for each member card */
 .member-card:nth-child(odd) {
   margin-top: 2rem;
